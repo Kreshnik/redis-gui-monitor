@@ -1,7 +1,7 @@
 {
-  "name": "redmon-gui",
+  "name": "redis-gui-monitor",
   "version": "1.0.0",
-  "description": "A minimal Electron application",
+  "description": "A Redis monitor build with Electron",
   "main": "main.js",
   "scripts": {
     "start": "electron ."

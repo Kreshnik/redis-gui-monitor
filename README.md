@@ -1,4 +1,4 @@
-# Redis Monitor
+# Redis GUI Monitor
 A Redis monitor build with Electron
 
 ![Alt text](screenshot.png "Preview")
