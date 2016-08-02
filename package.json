@@ -1,0 +1,30 @@
+{
+  "name": "redmon-gui",
+  "version": "1.0.0",
+  "description": "A minimal Electron application",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Kreshnik/redis-gui-monitor.git"
+  },
+  "keywords": [
+    "Redis",
+    "Redis monitor"
+  ],
+  "author": "Kreshnik Hasanaj",
+  "bugs": {
+    "url": "https://github.com/Kreshnik/redis-gui-monitor/issues"
+  },
+  "homepage": "https://github.com/Kreshnik/redis-gui-monitor",
+  "devDependencies": {
+    "electron-prebuilt": "^1.2.0"
+  },
+  "dependencies": {
+    "babyparse": "^0.4.6",
+    "shelljs": "^0.7.2",
+    "vue": "^1.0.26"
+  }
+}

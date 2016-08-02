@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Redis Monitor</title>
+    <link rel="stylesheet" href="assets/css/photon.min.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<div class="window">
+    <header class="toolbar toolbar-header">
+        <div class="toolbar-actions">
+
+            <div class="btn-group pull-right">
+                <button class="btn btn-default">
+                    <span class="icon icon-trash" @click="clearLogView"></span>
+                </button>
+                <button class="btn btn-default"
+                        :disabled="!started"
+                        @click="stopMonitor"
+                        :class="{'active': !started}">
+                    <span class="icon icon-stop"></span>
+                </button>
+                <button class="btn btn-default pull-right"
+                        :disabled="started"
+                        @click="startMonitor"
+                        :class="{'active': started}">
+                    <span class="icon icon-play"></span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div class="window-content">
+        <table class="table-striped">
+            <thead>
+            <tr>
+                <th>Time</th>
+                <th>DB Index</th>
+                <th>IP</th>
+                <th>Port</th>
+                <th>Command</th>
+                <th>Data</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr v-for="log in logs">
+                <td>{{ log.time }}</td>
+                <td>{{ log.dbIndex }}</td>
+                <td>{{ log.ip }}</td>
+                <td>{{ log.port }}</td>
+                <td>{{ log.command }}</td>
+                <td>{{ log.data }}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <footer class="toolbar toolbar-footer">
+
+        <span v-if="!started" class="icon icon-record status-icon" style="color:#fc605b"> Stopped</span>
+        <span v-if="started" class="icon icon-record status-icon" style="color:#34c84a"> Running</span>
+
+        <div class="toolbar-actions">
+            <button class="btn btn-primary pull-right"
+                    :disabled="!started && logs.length === 0"
+                    @click="export"
+            >
+                Export to CSV
+            </button>
+        </div>
+    </footer>
+</div>
+</body>
+
+<script>
+    // You can also require other files to run in this process
+    require('./renderer.js')
+</script>
+</html>

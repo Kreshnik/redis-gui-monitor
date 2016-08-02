@@ -1,0 +1,7 @@
+.status-icon {
+    position: absolute;
+    bottom: 7px;
+    left: 10px;
+    font-family: system, -apple-system, ".SFNSDisplay-Regular", "Helvetica Neue", Helvetica, "Segoe UI", sans-serif;
+    line-height: 1.6;
+}
